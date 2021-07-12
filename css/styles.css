@@ -1,0 +1,399 @@
+:root {
+    
+    --fuenteParrafos: 'Open Sans', sans-serif;
+    --fuenteHeading: 'Krub', sans-serif;
+
+    --primario: #1f1e1e;
+    --negro: #000000;
+    --secundario: #922525;
+    --blanco: #ffffff;
+    --tercero: #cccccc;
+    --cuarto: #58428b;
+    
+}
+/* globales */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;    
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+p {
+    font-family: var(--fuenteParrafos);
+    font-size: 2rem;
+    line-height: 1.5em;
+}
+
+img {
+    max-width: auto;
+      
+}
+
+.contenedor {
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+
+@media (min-width: 768px) {
+    .contenedor {
+        max-width: 120rem;
+        margin: 0 auto;
+    }
+    
+}
+
+
+h1, h2, h3 {
+    font-family: var(--fuenteHeading);
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-image: linear-gradient(to top, var(--primario) 80%, var(--tercero) 100%);
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-family: var(--fuenteHeading);
+    margin: 0;
+}
+
+/* heading */
+
+.header-principal {       
+    display: flex;
+    height: 12rem;
+    justify-content:space-evenly;
+    align-items: center;    
+    text-transform: uppercase;
+    line-height: 3em;
+}
+
+/* carrito */
+
+.carrito {
+    display: flex;
+    align-items: center;    
+    margin-right: 2rem;
+}
+
+
+.borrar-pelicula {
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu #carrito{
+    display: none;
+}
+.submenu:hover #carrito{
+    display: block;
+    position: absolute;
+    right:0;
+    top:100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+    
+}
+.vacio {
+    padding: 10px;
+    background-color: crimson;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+}
+
+.texto-vaciar {
+    font-weight: 700;
+    color: var(--negro);
+}
+
+
+
+@media (min-width: 736px) {
+    .botonCarrito {
+        width: auto;
+    }    
+}
+
+
+
+#lista-carrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 2rem;
+    padding-right: 2rem;   
+
+}
+
+
+
+/* navegacion */
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secundario);
+    padding: 2rem;
+    justify-content:space-evenly;  
+    align-items: center;
+    line-height: 3rem;
+    
+}
+
+@media (min-width: 736px) {
+    .navegacion-principal {
+        flex-direction: row;
+        padding: 1.5rem;
+    }
+
+
+    .navegacion-enlace {
+        margin: 0;
+    }
+}
+
+
+.navegacion-enlace {
+    text-decoration: none;
+    font-family: var(--fuenteParrafos);
+    color: var(--blanco);
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 1rem;
+    
+
+}
+
+.navegacion-enlace:hover {
+    font-size: 4rem;
+    color: var(--negro);
+
+}
+
+
+/* portada */
+
+
+.portada {    
+    background-image: url(/img/popcorn.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50rem;
+    padding: auto;   
+    position: relative; 
+    line-height: 3em;
+}
+
+.texto-principal {
+    font-family: var(--fuenteHeading);
+    text-transform: uppercase;
+    margin: 1rem;
+    font-size: 3.5rem;
+    color: var(--blanco);
+
+}
+
+
+.contenido-portada {    
+    position: absolute;
+    background-color: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+/* main */
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    align-items: center; 
+       
+}
+
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }   
+    
+}
+
+
+.textoprincipal-peliculas {
+    color: var(--blanco);
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding: 2rem;
+}
+
+
+.pelicula {
+    display: grid;    
+    justify-content: center;
+    background-color: var(--secundario);
+    padding: 1.5rem;    
+    margin-bottom: 1rem;
+    line-height: 3em;
+    
+}
+
+.pelicula-info {
+    text-transform: uppercase;
+    line-height: 1.5em;
+    color: var(--blanco);
+    text-align: center;
+}
+
+.pelicula-imagen {
+    max-width: 100%;    
+}
+
+.pelicula__nombre {
+    color: var(--blanco);
+    font-family: var(--fuenteHeading);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.agregar-carrito {
+    color: var(--blanco);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+/* font-size: 3rem;
+color: #f4da0000 !important;
+ */
+.agregar-carrito:hover {
+    background-color: #9acd32c2;
+    color: black;
+    color: rgb(0, 16, 241);
+}
+
+
+
+/* footer */
+
+.footer-principal {
+    background-color: var(--blanco);
+    height: auto;
+    padding: 2rem; 
+    margin-top: 2rem ;
+    
+    
+}
+
+
+
+
+
+.footer-principal__texto {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    color: var(--negro);
+    font-family: var(--fuenteHeading);
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 1rem;
+    gap: 3rem;
+    text-align: center;
+    line-height: 2em;
+}
+
+
+.footer-principal__texto p:hover {
+    font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .footer-principal__texto {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+
+
+/* paguina de nosotros */
+
+
+.nosotros__contenido {
+    display: grid;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 3.5rem;
+    color: var(--blanco);
+    
+    
+    
+}
+
+@media (min-width: 1400px) {
+    .nosotros__contenido {
+        flex-direction: row;
+        column-gap: 2.5rem;
+
+    }
+
+    .nosotros__imagen {
+        max-width: 700px;
+    }
+}
+
+
+.textolugar {
+    font-size: 3rem;
+
+}
+
+.border {    
+    border: solid 3px var(--secundario);
+    margin-bottom: 1rem;
+}
+
+
